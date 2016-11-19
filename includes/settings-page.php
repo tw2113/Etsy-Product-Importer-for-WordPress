@@ -154,10 +154,6 @@ class Etsy_Options_Admin {
 	 * @return mixed Description text.
 	 */
 	public function api_key_description() {
-
-		// Grab our settings.
-		$options = get_option( 'etsy_store_settings' );
-
 		$output = __( 'Enter your API Key above.', 'etsy_importer' );
 		$output .= '<p class="cmb2-metabox-description">' . sprintf( __( 'Need help? <a href="%s" class="thickbox">Click here</a> for a walkthrough on how to setup your Etsy Application.', 'etsy_importer' ), '#TB_inline?&height=600&width=800&inlineId=etsy-api-instructions' ) . '</p>';
 		$output .= '<div id="etsy-api-instructions" style="display: none; width:800px;">';
@@ -168,7 +164,6 @@ class Etsy_Options_Admin {
 		$output .= '</div>';
 
 		return $output;
-
 	}
 
 	/**
@@ -177,10 +172,6 @@ class Etsy_Options_Admin {
 	 * @return mixed Description text
 	 */
 	public function store_id_description() {
-
-		// Grab our settings.
-		$options = get_option( 'etsy_store_settings' );
-
 		$output = __( 'Enter your Store ID above.', 'etsy_importer' );
 		$output .= '<p class="cmb2-metabox-description">' . sprintf( __( 'Need help? <a href="%s" class="thickbox">Click here</a> for a walkthrough on how to find your Etsy store ID.', 'etsy_importer' ), '#TB_inline?&height=420&width=800&inlineId=etsy-store-id-instructions' ) . '</p>';
 		$output .= '<div id="etsy-store-id-instructions" style="display: none;">';
