@@ -349,8 +349,7 @@ class Etsy_Importer {
 	public function get_attachment_id_from_src( $image_src ) {
 		global $wpdb;
 
-		$query = "SELECT ID FROM {$wpdb->posts} WHERE guid='$image_src'";
-		$id = $wpdb->get_var( $query );
+		$id = $wpdb->get_var( $wpdb->prepare( "SELECT ID FROM {$wpdb->posts} WHERE guid='%s'", $image_src ) );
 
 		return $id;
 	}
