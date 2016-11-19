@@ -173,8 +173,8 @@ class Etsy_Importer_Shortcodes {
 				$image_id = $image->ID;
 
 				// Grab the image based on the size passed in the shortcode.
-				$image_thumb 	= wp_get_attachment_image( $image_id, $thumb_size );
-				$image_full 	= wp_get_attachment_image_src( $image_id, 'full' );
+				$image_thumb = wp_get_attachment_image( $image_id, $thumb_size );
+				$image_full  = wp_get_attachment_image_src( $image_id, 'full' );
 
 				// Display the image.
 				$output .= '<a href="' . $image_full[0]. '" class="thickbox" rel="gallery-' . $atts['id'] . '">' . $image_thumb . '</a>';
