@@ -50,7 +50,7 @@ class Etsy_Importer_Shortcodes {
 		}
 
 		// Get our post or external link.
-		if ( 'yes' == $atts['external'] || 'true' == $atts['external'] ) {
+		if ( 'yes' === $atts['external'] || 'true' === $atts['external'] ) {
 
 			$link   = esc_url( get_post_meta( $atts['id'], '_etsy_product_url', true ) );
 			$target = '_blank';
