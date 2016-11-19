@@ -63,14 +63,14 @@ class Etsy_Options_Admin {
 				'type' => 'text',
 			),
 			array(
-				'name' => __( 'Store ID', 'etsy_importer' ),
-				'desc' => $this->store_id_description(),
+				'name' => __( 'Shop name or ID', 'etsy_importer' ),
+				'desc' => __( 'Enter your Shop name or ID above.', 'etsy_importer' ),
 				'id'   => 'etsy_importer_store_id',
 				'type' => 'text',
 			),
 			array(
 				'name' => __( 'Disable updating of post status on product import', 'etsy_importer' ),
-				'desc' => __( 'When left unchecked, any product in your Etsy shop which is no longer active will be automatically set to draft status; any product in your Etsy shop which was previously inactive and has become active will be automatically set to publish status.', 'etsy_importer' ),
+				'desc' => __( 'When left unchecked, inactive products will be set to draft status and active products will be set to published. If you\'ve changed a product\'s status for already imported items, their published status will update appropriately.', 'etsy_importer' ),
 				'id'   => 'etsy_importer_status_checkbox',
 				'type' => 'checkbox',
 			),
