@@ -32,7 +32,7 @@ class Etsy_Importer {
 	 * @return Etsy_Importer A single instance of this class.
 	 */
 	public static function engage() {
-		if ( self::$instance === null ) {
+		if ( null === self::$instance ) {
 			self::$instance = new self();
 		}
 
