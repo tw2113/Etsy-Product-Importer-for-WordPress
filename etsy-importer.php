@@ -108,6 +108,9 @@ class Etsy_Importer {
 
 		// Set our checkbox value to be used throughout the class.
 		$this->post_status_on_import = $checkbox;
+
+		add_filter( 'manage_etsy_products_posts_columns', array( $this, 'custom_edit_columns' ) );
+		add_action( 'manage_posts_custom_column', array( $this, 'custom_columns' ), 10, 2 );
 	}
 
 	/**
@@ -713,6 +716,27 @@ class Etsy_Importer {
 			// Update our post settings.
 			wp_update_post( apply_filters( 'etsy_importer_updated_post_args', $update_post_args ) );
 
+		}
+	}
+
+	/**
+	 * Add coulmn for post ID.
+	 *
+	 * @since 1.5.0
+	 *
+	 * @param array $columns post list columns.
+	 * @return array $columns Array of columns to add.
+	 */
+	public function custom_edit_columns( $columns ) {
+
+		$columns['etsy_id'] = esc_html__( 'ID', 'etsy_importer' );
+
+		return $columns;
+	}
+
+	public function custom_columns( $column, $post_id ) {
+		if ( 'etsy_id' === $column ) {
+			echo esc_html( $post_id );
 		}
 	}
 }
