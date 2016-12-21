@@ -7,7 +7,7 @@ Author: WebDevStudios
 Author URI: http://www.webdevstudios.com
 Requires at least: 3.5
 Tested up to: 4.7
-Stable tag: 1.4.0
+Stable tag: 1.5.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -229,6 +229,9 @@ Usage:
 add_filter( 'etsy_importer_product_import_insert_args', 'your_project_modify_etsy_importer_product_import_insert_args', 10, 2 );`
 
 == Changelog ==
+
+= 1.4.1 =
+* Fix: Move CMB2 metaboxes registration to `cmb2_init` for compatibility with plugins using backcompat methods.
 
 = 1.4.0 =
 * Fix: hopeful solution for occasional "Invalid header" issue.
